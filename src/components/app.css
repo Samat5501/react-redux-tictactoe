@@ -1,3 +1,24 @@
-.app{
-    color: aliceblue;
+ body{
+     background: purple;
+     color: white;
+     text-align: center;
+ } 
+ .square{
+  width: 500px;
+  height: 500px;
+  background-color: aquamarine;
+  border: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.row {
+  height: 164px;
+  width: 164px;
+  border: 1px solid black;
+  cursor: pointer;
+  display: flex;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
 }
