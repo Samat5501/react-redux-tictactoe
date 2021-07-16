@@ -1,49 +1,53 @@
 import React, {useState} from 'react'
-// import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
 import './app.css'
-// import {setCount} from '../reducers/reposReducer'
+import Board from './Board';
+import Input from './Input';
 
 
 export const App = () => {
-    const [value, setValue] = useState();
-  const [value1, setValue1] = useState();
+    const boardSize1 = useSelector(state => state.repos.boardSize)
+    const [boardSize, setBoardSize] = useState(boardSize1);
+    const [moveLimit, setMovelimit] = useState(boardSize);
+    const [board, setBoard] = useState([...Array(boardSize).fill(null)]);
+    const size1 = useSelector(state => state.repos.size)
+    const [size, setSize] = useState(size1);
 
-   
-  const press = (event) => {
-    if (event.key === 'Enter' && value !== '') {
-      setValue1(value);
-      setValue('');
+    function getInputValue(event) {
+    const sizeInput = event.target.value;
+    setSize(sizeInput);
+  }
+    function setFromInputSize(event) {
+    if (event.key === "Enter" && size !== "") {
+      setBoardSize(Math.pow(size, 2));
+      setMovelimit(Math.pow(size, 2));
+      setBoard([...Array(Math.pow(size, 2)).fill()]);
     }
-  };
+    }
+    
   return (
-    <div>
+    <div className="App">
       <h1>Tic-toc-toe</h1>
       <p>Who will be first</p>
       <div>
         <div>
-          <button>O</button>
-          <button>X</button>
+            <button>X</button>
+            <button>O</button>
         </div>
-        <input
+        <Input
           type="number"
-          value={value}
-          onKeyPress={press}
-          onChange={(e) => setValue(e.target.value)}
+          value={size}
+          onKeyPress={setFromInputSize}
+          onChange={getInputValue}
         />
       </div>
-      <div>
-        <h4>The winner is Player 1</h4>
-        <p>movies 3</p>
-      </div>
-      <button>restart</button>
-      <ul>
-        <li className="row">{value1}</li>
-        {/* {square.map((item, index) => {
-                    return (
-                        <li className="row">{item}</li>
-                    )
-                })} */}
-      </ul>
+          <button>Restart</button>
+          <div><Board
+              boardSize={boardSize}
+              board={board}
+              setBoard={setBoard}
+              setMovelimit={setMovelimit}
+          /></div>
     </div>
   );
 }
