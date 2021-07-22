@@ -12,3 +12,7 @@
   cursor: pointer;
   user-select: contain;
 }
+.board:hover{
+  border: 2px solid green;
+  background-color: rgb(87, 87, 196);
+}
