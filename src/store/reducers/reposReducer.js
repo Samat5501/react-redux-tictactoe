@@ -1,6 +1,5 @@
 import {
   DRAW_O,
-  RESTART_BOARD,
   DRAW_X,
   PLAYER_O,
   PLAYER_X,
@@ -19,8 +18,6 @@ export const reposReducer = (state = initialState, action) => {
     case DRAW_X:
       return {};
     case DRAW_X:
-      return {};
-    case RESTART_BOARD:
       return {};
     default:
       return state;
