@@ -15,9 +15,9 @@ export const App = () => {
   const [size, setSize] = useState(state.size1);
     
     const [moves, setMoves] = useState(state.moves);
-    const [winner, setWinner] = useState(state.winner1);
+    const [winner, setWinner] = useState(state.winner);
     const [player, setPlayer] = useState(state.player);
-  
+  console.log("winner",winner);
 
     function getInputValue(event) {
     const sizeInput = event.target.value;
@@ -29,7 +29,9 @@ export const App = () => {
       setMovelimit(Math.pow(size, 2));
       setBoard([...Array(Math.pow(size, 2)).fill()]);
     }
-    }
+  }
+
+   
   return (
     <div className="App">
       <h1>Tic-tac-toe</h1>

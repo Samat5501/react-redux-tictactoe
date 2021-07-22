@@ -10,7 +10,7 @@ const initialState = {
   size: 3,
   moves: 0,
   boardSize: Math.pow(3, 2),
-  winner: "",
+  winner: '',
   player: '',
 };
 
@@ -25,7 +25,6 @@ export const reposReducer = (state = initialState, action) => {
       const newOState = [...state];
       newOState[action.cellIndex] = "O";
       return newOState;
-
 
     default:
       return state;
