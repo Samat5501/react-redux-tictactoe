@@ -1,6 +1,10 @@
 body {
-  background: rgb(185, 85, 172);
-}
-h1{
-    color: red;
+  --board-size: 3;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #26a69a;
 }
