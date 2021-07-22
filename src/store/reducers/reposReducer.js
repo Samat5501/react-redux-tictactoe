@@ -26,14 +26,7 @@ export const reposReducer = (state = initialState, action) => {
       newOState[action.cellIndex] = "O";
       return newOState;
 
-    // case RESTART_BOARD:
-    //   return {
-    //     ...state,
-    //     size: action.obj.size,
-    //     moves: state.moves,
-    //     winner: action.obj.winner,
-    //     player: action.obj.player,
-    //   };
+
     default:
       return state;
   }

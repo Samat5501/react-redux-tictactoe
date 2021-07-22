@@ -19,24 +19,6 @@ export const App = () => {
     const [player, setPlayer] = useState(state.player);
   
 
-    let obj = {
-        boardSize: boardSize,
-        board: board,
-        winner: winner,
-        player: player,
-        moves: state.moves,
-        moveLimit: moveLimit,
-    }
-
-  // const dispatch = useDispatch();
-  //   const handleRestart = () => {
-  //      dispatch(restart_board(obj))
-  //   setBoard([...Array(moveLimit).fill(null)]);
-  //   setPlayer(player === 'X' ? 'O' : 'X');
-  //   setMoves(state.moves);
-  //   setWinner("");
-  // };
-
     function getInputValue(event) {
     const sizeInput = event.target.value;
     setSize(sizeInput);
@@ -48,7 +30,6 @@ export const App = () => {
       setBoard([...Array(Math.pow(size, 2)).fill()]);
     }
     }
-    console.log(state.moves);
   return (
     <div className="App">
       <h1>Tic-tac-toe</h1>
