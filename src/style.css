@@ -1,0 +1,10 @@
+body {
+  --board-size: 3;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #bfc4c3;
+}
