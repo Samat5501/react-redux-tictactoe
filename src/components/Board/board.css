@@ -6,11 +6,12 @@
 }
 
 .board {
-  border: 1px solid black;
-  font-size: 5em;
-  text-align: center;
+  border: 2px solid black;
+  font-size: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  user-select: contain;
 }
 .board:hover{
   border: 2px solid green;

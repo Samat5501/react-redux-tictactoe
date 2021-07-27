@@ -1,54 +1,51 @@
 import { PLAYER_O, PLAYER_X, TURN } from "../action/action";
-// import { TURN } from "../action/player";
-// import { PLAYER_X, TURN, PLAYER_O } from "../helpers/actionTypes";
-
 
 const initialState = {
-  p1: "X",
-  p2: "O",
-  turn: "p1",
+    p1: "X",
+    p2: "O",
+    turn: "p1",
 };
 
 export function playerReducer(state = initialState, action) {
-  switch (action.type) {
-    case PLAYER_X:
-      const newXState = { ...state };
+    switch (action.type) {
+        case PLAYER_X:
+            const newXState = {...state };
 
-      if (action.player === "p1") {
-        newXState.p1 = "X";
-        newXState.p2 = "O";
-      } else {
-        newXState.p1 = "O";
-        newXState.p2 = "X";
-      }
+            if (action.player === "p1") {
+                newXState.p1 = "X";
+                newXState.p2 = "O";
+            } else {
+                newXState.p1 = "O";
+                newXState.p2 = "X";
+            }
 
-      return newXState;
+            return newXState;
 
-    case PLAYER_O:
-      const newOState = { ...state };
+        case PLAYER_O:
+            const newOState = {...state };
 
-      if (action.player === "p1") {
-        newOState.p1 = "O";
-        newOState.p2 = "X";
-      } else {
-        newOState.p1 = "X";
-        newOState.p2 = "O";
-      }
+            if (action.player === "p1") {
+                newOState.p1 = "O";
+                newOState.p2 = "X";
+            } else {
+                newOState.p1 = "X";
+                newOState.p2 = "O";
+            }
 
-      return newOState;
+            return newOState;
 
-    case TURN:
-      const newState = { ...state };
+        case TURN:
+            const newState = {...state };
 
-      if (newState.turn === "p1") {
-        newState.turn = "p2";
-      } else {
-        newState.turn = "p1";
-      }
+            if (newState.turn === "p1") {
+                newState.turn = "p2";
+            } else {
+                newState.turn = "p1";
+            }
 
-      return newState;
+            return newState;
 
-    default:
-      return state;
-  }
+        default:
+            return state;
+    }
 }

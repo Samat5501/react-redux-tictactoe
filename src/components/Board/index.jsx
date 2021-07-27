@@ -24,10 +24,14 @@ const Board = ({boardSize,board,setBoard,winner,setWinner,player,setPlayer,moves
 
     setPlayer(player === 'X' ? 'O' : 'X');
     setMoves((prevState) => prevState + 1);
+    
   };
+
+  const Board = styled.div`
+  color: ${player === 'X'};
+  `;
   
     return (
-        <div>
       <div className="board-container">
           {board.map((__, idx) => (
             <div
@@ -39,7 +43,6 @@ const Board = ({boardSize,board,setBoard,winner,setWinner,player,setPlayer,moves
           </div>
         ))}
       </div>
-    </div>
     )
 }
 
