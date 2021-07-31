@@ -1,3 +1,22 @@
+body{
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
 .App {
   display: flex;
   flex-direction: column;
@@ -8,20 +27,112 @@
 
 .App h1 {
   text-decoration: underline;
-  color: rgb(105, 152, 212);
-}
-
-p{
+  color: rgb(200, 226, 83);
+  font-size: clamp(2rem, 5vw, 6rem);
   margin: 0;
 }
 
+p{
+  margin-top: 5px;
+  font-size: clamp(1rem, 4vw, 1.6rem);
+  color: #e0e271;
+}
+
+input{
+  height: 18px;
+}
 .btns{
-  width: 80px;
+  width: 110px;
   display: flex;
+  margin-left: 33px;
+  margin-top: -15px;
+  margin-bottom: 10px;
 }
 
 .btn{
-  width: 30px;
-  height: 30px;
-  margin: 10px;
+  width: 40px;
+  margin-left: 10px;
+  padding: 10px;
+  font-size: clamp(10px 2rem 20px);
+  outline: none;
+  border-radius: 5px;
+  background: rgb(185, 158, 219);
 }
+
+.moves{
+  font-size: 16px;
+  color: #dae99b;
+}
+
+.b{
+  margin-top: -22px;
+}
+
+.block__second{
+  text-align: center;
+}
+
+.player{
+  display: flex;
+  justify-content: space-around;
+  font-size: 18px;
+  margin-top: 10px;
+  color: blue;
+}
+
+.x{
+  background-color: yellow;
+}
+
+.o{
+  background-color: blue;
+  color: white;
+}
+
+button {
+  background: transparent;
+  box-shadow: 0px 0px 0px transparent;
+  border: 0px solid transparent;
+  text-shadow: 0px 0px 0px transparent;
+}
+
+.button {
+  background: rgb(235, 118, 118);
+  border-radius: 20px;
+  padding: 5px 40px;
+  color: rgb(51, 51, 53);
+  text-decoration: none;
+  font-size: clamp(16px, 2vw, 2rem);
+  margin-top: 13px;
+}
+
+/* Hover state animation applied here */
+.button:hover { 
+  -webkit-animation: hover 1200ms linear 2 alternate;
+  animation: hover 1200ms linear 2 alternate;
+  color: #828584;
+}
+
+/* Active state animation applied here */
+.button:active {
+  -webkit-animation: active 1200ms ease 1 alternate;
+  animation: active 1200ms ease 1 alternate; 
+  background: #5F9BE0;
+}
+.gray { background: #D2D2D2; }
+.gray:active { background: #b9b9b9; }
+
+/* Active state animation keyframes below */
+
+@-webkit-keyframes active { 
+  0% {transform: scale(1,1);}
+  90% {transform: scale(.9,.88);}
+  100% {transform: scale(.92,.9);}
+}
+
+@keyframes active { 
+  0% {transform: scale(1,1);}
+  90% {transform: scale(.9,.88);}
+  100% {transform: scale(.92,.9);}
+}
+

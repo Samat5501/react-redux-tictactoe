@@ -1,7 +1,7 @@
 import React, {  useEffect } from 'react'
 import { checkBoard } from '../Checkboard/CheckBoard';
-// import {useDispatch, useSelector} from 'react-redux'
 import './board.css'
+import styled from 'styled-components';
 
 const Board = ({boardSize,board,setBoard,winner,setWinner,player,setPlayer,moves,setMoves,moveLimit}) => {
   
@@ -27,8 +27,8 @@ const Board = ({boardSize,board,setBoard,winner,setWinner,player,setPlayer,moves
     
   };
 
-  const Board = styled.div`
-  color: ${player === 'X'};
+  const BoardStyle = styled.div`
+  color: ${(player === 'X') ? 'blue' : 'yellow'};
   `;
   
     return (
@@ -39,7 +39,10 @@ const Board = ({boardSize,board,setBoard,winner,setWinner,player,setPlayer,moves
               className='board'
               onClick={() => handleClick(idx)}
           >
-            {board[idx] === 'X' ? "X" : board[idx] === 'O' ? "O" : null}
+              <BoardStyle>
+                {board[idx] === 'X' ? "X" : board[idx] === 'O' ? "O" : null}
+            </BoardStyle>
+            
           </div>
         ))}
       </div>
